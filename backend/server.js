@@ -20,7 +20,10 @@ if (!fs.existsSync(uploadsDir)) {
 }
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://ai-new-resume-analyzer.vercel.app/",
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
